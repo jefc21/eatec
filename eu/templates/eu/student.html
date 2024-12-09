@@ -3,13 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" method="post" style="margin: 10%;">
         {% csrf_token %}
-        {{form}}
-        <button type="submit">submit</button>
+        <div class="input-group mb-3" style="max-width: 90%; display: flex;">
+            <label for="">Nome:</label>
+            <input type="text" class="form-control" name="name" placeholder="Username" aria-label="Username">
+            <label for="">Idade:</label>
+            <input type="number" class="form-control" name="age" placeholder="Server" aria-label="Server">
+        </div>
+        <div class="input-group mb-3" style="max-width: 90%; display: flex;">
+            <label for="">Sonho:</label>
+            <input type="text" class="form-control" name="dream" placeholder="Username" aria-label="Username">
+            <label for="">Turma:</label>
+            <select class="form-select" name="clasS" aria-label="Default select example">
+              <option value="1º Informática">1º Informática</option>
+              <option value="2º Informática">2º Informática</option>
+              <option value="3º Informática">3º Informática</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </body>
 </html>

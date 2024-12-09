@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'eu/login1.css' %}">
+
+    <title>Login</title>
+</head>
+  <body style="display: flex; justify-content: center;">
+    <div style="width: 36rem;margin-top: 5rem;display: flex;justify-content: center;">
+      <form style="text-align: center" method="post" action="register">
+        {% csrf_token %}
+        <img class="logo_eu" src="{% static 'eu/imgs/logo.png' %}" alt="logo"></img>
+        <h1 class="h3 mb-3 fw-normal">Cadastro</h1>
+
+        <div class="form-floating" style="width: 20rem; margin-top: 2rem;">
+            <input type="text" name="name" class="form-control" id="floatingInput" placeholder="nome completo" style="border-radius: 20px;">
+            <label for="floatingInput">Nome</label>
+        </div>
+
+        <div class="form-floating" style="width: 20rem; margin-top: 2rem;">
+          <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" style="border-radius: 20px;">
+          <label for="floatingInput">Email</label>
+        </div>
+
+        <div class="form-floating" style="width: 20rem; margin-top: 1.2rem;">
+          <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" style="border-radius: 20px;">
+          <label for="floatingPassword">Senha</label>
+        </div>
+
+        <button class="btn btn-primary py-2" type="submit" style="width: 16rem;border-radius: 20px; margin-top: 1.2rem;">
+          Cadastrar
+        </button>
+        <br>
+        <a href="login">logar</a>
+        <p class="mt-5 mb-3 text-body-secondary">© 2024–2025</p>
+      </form>
+    </div>
+  </body>
+</html>
